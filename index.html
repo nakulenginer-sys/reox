@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redmi Landing Page</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#050816;
+      overflow-x:hidden;
+    }
+
+    /* =========================
+        HEADER / NAVBAR
+    ========================== */
+
+    header{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      backdrop-filter:blur(12px);
+      background:rgba(0,0,0,0.35);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .navbar{
+      width:100%;
+      padding:18px 6%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    /* Logo */
+
+    .logo{
+      color:#fff;
+      font-size:30px;
+      font-weight:700;
+      letter-spacing:1px;
+      cursor:pointer;
+    }
+
+    .logo span{
+      color:#00a6ff;
+      text-shadow:0 0 15px #00a6ff;
+    }
+
+    /* Nav Links */
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    .nav-links li a{
+      text-decoration:none;
+      color:#fff;
+      font-size:15px;
+      font-weight:500;
+      position:relative;
+      transition:0.3s;
+    }
+
+    .nav-links li a::after{
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0%;
+      height:2px;
+      background:#00a6ff;
+      transition:0.4s;
+      box-shadow:0 0 12px #00a6ff;
+    }
+
+    .nav-links li a:hover{
+      color:#00a6ff;
+    }
+
+    .nav-links li a:hover::after{
+      width:100%;
+    }
+
+    /* Icons */
+
+    .nav-icons{
+      display:flex;
+      align-items:center;
+      gap:20px;
+    }
+
+    .nav-icons i{
+      color:#fff;
+      font-size:20px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .nav-icons i:hover{
+      color:#00a6ff;
+      transform:translateY(-3px);
+      text-shadow:0 0 15px #00a6ff;
+    }
+
+    /* Sign In Button */
+
+    .signin-btn{
+      padding:10px 22px;
+      border:none;
+      border-radius:30px;
+      background:linear-gradient(135deg,#00a6ff,#0077ff);
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.4s;
+      box-shadow:0 0 20px rgba(0,166,255,0.4);
+    }
+
+    .signin-btn:hover{
+      transform:scale(1.08);
+      box-shadow:0 0 30px rgba(0,166,255,0.9);
+    }
+
+    /* =========================
+        HERO SECTION
+    ========================== */
+
+    .hero{
+      width:100%;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 8%;
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Background Glow */
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:#00a6ff;
+      filter:blur(180px);
+      top:-100px;
+      right:-100px;
+      opacity:0.35;
+      animation:glowMove 8s infinite alternate;
+    }
+
+    @keyframes glowMove{
+      0%{
+        transform:translateY(0px);
+      }
+      100%{
+        transform:translateY(60px);
+      }
+    }
+
+    /* Left Content */
+
+    .hero-content{
+      max-width:600px;
+      z-index:2;
+      animation:fadeUp 1.2s ease;
+    }
+
+    .hero-content h1{
+      color:#fff;
+      font-size:70px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-content h1 span{
+      color:#00a6ff;
+      text-shadow:0 0 20px #00a6ff;
+    }
+
+    .hero-content p{
+      color:#cbd5e1;
+      font-size:18px;
+      line-height:1.8;
+      margin-bottom:35px;
+    }
+
+    /* Buttons */
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+    }
+
+    .btn{
+      padding:14px 32px;
+      border:none;
+      border-radius:35px;
+      cursor:pointer;
+      font-size:16px;
+      font-weight:600;
+      transition:0.4s;
+    }
+
+    .primary-btn{
+      background:linear-gradient(135deg,#00a6ff,#0077ff);
+      color:#fff;
+      box-shadow:0 0 25px rgba(0,166,255,0.6);
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 40px rgba(0,166,255,1);
+    }
+
+    .secondary-btn{
+      background:transparent;
+      border:2px solid #00a6ff;
+      color:#00a6ff;
+    }
+
+    .secondary-btn:hover{
+      background:#00a6ff;
+      color:#fff;
+      transform:translateY(-5px);
+    }
+
+    /* Hero Image */
+
+    .hero-image{
+      position:relative;
+      z-index:2;
+      animation:floatPhone 4s ease-in-out infinite;
+    }
+
+    .hero-image img{
+      width:480px;
+      filter:drop-shadow(0 0 40px rgba(0,166,255,0.7));
+      transition:0.4s;
+    }
+
+    .hero-image img:hover{
+      transform:scale(1.05) rotate(-3deg);
+    }
+
+    @keyframes floatPhone{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-20px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(50px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0px);
+      }
+    }
+
+    /* Responsive */
+
+    @media(max-width:1100px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+        padding-top:120px;
+      }
+
+      .hero-content h1{
+        font-size:50px;
+      }
+
+      .hero-image img{
+        width:350px;
+        margin-top:40px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =========================
+        HEADER
+  ========================== -->
+
+  <header>
+
+    <nav class="navbar">
+
+      <!-- Logo -->
+      <div class="logo">
+        Redmi<span>.</span>
+      </div>
+
+      <!-- Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#">Store</a></li>
+        <li><a href="#">Phones</a></li>
+        <li><a href="#">Tablets</a></li>
+        <li><a href="#">TV & Smart Home</a></li>
+        <li><a href="#">Smart Watch & Audio</a></li>
+        <li><a href="#">Discover</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+
+      <!-- Icons -->
+      <div class="nav-icons">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <button class="signin-btn">
+          Sign In
+        </button>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+  <!-- =========================
+        HERO SECTION
+  ========================== -->
+
+  <section class="hero">
+
+    <!-- Left Content -->
+    <div class="hero-content">
+
+      <h1>
+        Redmi <span>Note X</span><br>
+        Power Meets Future
+      </h1>
+
+      <p>
+        Experience the next generation smartphone with ultra-fast
+        performance, cinematic camera quality, and futuristic design.
+      </p>
+
+      <div class="hero-buttons">
+
+        <button class="btn primary-btn">
+          Buy Now
+        </button>
+
+        <button class="btn secondary-btn">
+          Explore
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Right Image -->
+    <div class="hero-image">
+
+      <img
+        src="2c994765-fc84-4e51-a098-7495dd6090c4.jpg"
+        alt="Redmi Phone"
+      >
+
+    </div>
+
+  </section>
+
+  <script>
+
+    // Navbar Scroll Effect
+
+    window.addEventListener("scroll",function(){
+
+      const header=document.querySelector("header");
+
+      header.classList.toggle("sticky",window.scrollY>50);
+
+    });
+
+  </script>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Redmi Hero Section</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#050816;
+      overflow-x:hidden;
+    }
+
+    /* ===================================
+          HERO SECTION
+    ==================================== */
+
+    .hero{
+      width:100%;
+      min-height:100vh;
+      padding:120px 5%;
+      position:relative;
+      overflow:hidden;
+      background:
+      radial-gradient(circle at top right,
+      rgba(0,166,255,0.25),
+      transparent 40%),
+      #050816;
+    }
+
+    /* Glowing Background */
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:#00a6ff;
+      border-radius:50%;
+      filter:blur(180px);
+      top:-120px;
+      right:-120px;
+      opacity:0.3;
+      animation:moveGlow 8s infinite alternate;
+    }
+
+    @keyframes moveGlow{
+      0%{
+        transform:translateY(0px);
+      }
+      100%{
+        transform:translateY(60px);
+      }
+    }
+
+    /* Heading */
+
+    .hero-top{
+      text-align:center;
+      margin-bottom:70px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-top h3{
+      color:#00a6ff;
+      font-size:18px;
+      letter-spacing:3px;
+      margin-bottom:15px;
+      text-transform:uppercase;
+    }
+
+    .hero-top h1{
+      color:#fff;
+      font-size:70px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-top h1 span{
+      color:#00a6ff;
+      text-shadow:0 0 20px #00a6ff;
+    }
+
+    .hero-top p{
+      color:#b0b8c5;
+      font-size:18px;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    /* Product Slider */
+
+    .slider-container{
+      width:100%;
+      overflow:hidden;
+      position:relative;
+      z-index:2;
+    }
+
+    .slider{
+      display:flex;
+      gap:30px;
+      width:max-content;
+      animation:scrollProducts 25s linear infinite;
+    }
+
+    @keyframes scrollProducts{
+      0%{
+        transform:translateX(0);
+      }
+      100%{
+        transform:translateX(-50%);
+      }
+    }
+
+    /* Product Card */
+
+    .product-card{
+      min-width:280px;
+      height:400px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:25px;
+      backdrop-filter:blur(15px);
+      padding:25px;
+      transition:0.5s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .product-card:hover{
+      transform:translateY(-15px) scale(1.03);
+      border:1px solid rgba(0,166,255,0.5);
+      box-shadow:0 0 35px rgba(0,166,255,0.35);
+    }
+
+    /* Neon Glow */
+
+    .product-card::before{
+      content:'';
+      position:absolute;
+      width:200px;
+      height:200px;
+      background:#00a6ff;
+      border-radius:50%;
+      filter:blur(100px);
+      top:-50px;
+      right:-50px;
+      opacity:0.15;
+    }
+
+    /* Product Image */
+
+    .product-card img{
+      width:100%;
+      height:240px;
+      object-fit:contain;
+      transition:0.5s;
+      filter:drop-shadow(0 0 25px rgba(0,166,255,0.6));
+    }
+
+    .product-card:hover img{
+      transform:scale(1.08) rotate(-3deg);
+    }
+
+    /* Product Text */
+
+    .product-info{
+      margin-top:20px;
+      text-align:center;
+    }
+
+    .product-info h2{
+      color:#fff;
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .product-info p{
+      color:#9aa4b2;
+      font-size:14px;
+      line-height:1.6;
+      margin-bottom:18px;
+    }
+
+    /* Button */
+
+    .buy-btn{
+      padding:12px 28px;
+      border:none;
+      border-radius:30px;
+      background:linear-gradient(135deg,#00a6ff,#0077ff);
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.4s;
+      box-shadow:0 0 20px rgba(0,166,255,0.4);
+    }
+
+    .buy-btn:hover{
+      transform:scale(1.08);
+      box-shadow:0 0 35px rgba(0,166,255,0.9);
+    }
+
+    /* Responsive */
+
+    @media(max-width:900px){
+
+      .hero-top h1{
+        font-size:45px;
+      }
+
+      .product-card{
+        min-width:230px;
+        height:360px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===================================
+          HERO SECTION
+  ==================================== -->
+
+  <section class="hero">
+
+    <!-- Heading -->
+
+    <div class="hero-top">
+
+      <h3>Store</h3>
+
+      <h1>
+        Featured <span>Products</span>
+      </h1>
+
+      <p>
+        Discover the latest Redmi smartphones with futuristic
+        technology, powerful performance, and premium design.
+      </p>
+
+    </div>
+
+    <!-- Product Slider -->
+
+    <div class="slider-container">
+
+      <div class="slider">
+
+        <!-- CARD 1 -->
+
+        <div class="product-card">
+
+          <img src="download (4).jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi X Pro</h2>
+
+            <p>Ultra performance flagship phone.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="product-card">
+
+          <img src="download (6).jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi Note 15</h2>
+
+            <p>120Hz AMOLED smooth display.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="product-card">
+
+          <img src="download (8).jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi Turbo</h2>
+
+            <p>Gaming beast with cooling system.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CARD 4 -->
+
+        <div class="product-card">
+
+          <img src="download (1).jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi Neo</h2>
+
+            <p>AI camera with cinematic shots.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CARD 5 -->
+
+        <div class="product-card">
+
+          <img src="download (2).jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi Max</h2>
+
+            <p>Massive battery and fast charging.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CARD 6 -->
+
+        <div class="product-card">
+
+          <img src="download (3).jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi Vision</h2>
+
+            <p>Crystal clear AMOLED experience.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CARD 7 -->
+
+        <div class="product-card">
+
+          <img src="download (4).jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi Air</h2>
+
+            <p>Lightweight premium flagship.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CARD 8 -->
+
+        <div class="product-card">
+
+          <img src="download (5).jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi Ultra</h2>
+
+            <p>High-end power with AI features.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CARD 9 -->
+
+        <div class="product-card">
+
+          <img src="download (6).jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi Edge</h2>
+
+            <p>Curved display futuristic design.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CARD 10 -->
+
+        <div class="product-card">
+
+          <img src="download (7).jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi Prime</h2>
+
+            <p>Premium design with flagship speed.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- Duplicate Cards For Infinite Scroll -->
+
+        <div class="product-card">
+
+          <img src="download (8).jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi X Pro</h2>
+
+            <p>Ultra performance flagship phone.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="product-card">
+
+          <img src="download.jpg">
+
+          <div class="product-info">
+
+            <h2>Redmi Note 15</h2>
+
+            <p>120Hz AMOLED smooth display.</p>
+
+            <button class="buy-btn">
+              Buy Now
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script>
+
+    // Pause slider on hover
+
+    const slider=document.querySelector(".slider");
+
+    slider.addEventListener("mouseenter",()=>{
+
+      slider.style.animationPlayState="paused";
+
+    });
+
+    slider.addEventListener("mouseleave",()=>{
+
+      slider.style.animationPlayState="running";
+
+    });
+
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Redmi Footer</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#050816;
+      color:#fff;
+    }
+
+    /* ====================================
+              FOOTER
+    ==================================== */
+
+    footer{
+      width:100%;
+      background:#020617;
+      padding:80px 8% 30px;
+      position:relative;
+      overflow:hidden;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Background Glow */
+
+    footer::before{
+      content:'';
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:#00a6ff;
+      filter:blur(160px);
+      border-radius:50%;
+      top:-120px;
+      right:-120px;
+      opacity:0.15;
+    }
+
+    /* Main Grid */
+
+    .footer-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:50px;
+      position:relative;
+      z-index:2;
+    }
+
+    /* Titles */
+
+    .footer-column h2{
+      font-size:18px;
+      margin-bottom:25px;
+      color:#00a6ff;
+      position:relative;
+    }
+
+    .footer-column h2::after{
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:45px;
+      height:2px;
+      background:#00a6ff;
+      box-shadow:0 0 12px #00a6ff;
+    }
+
+    /* Links */
+
+    .footer-column ul{
+      list-style:none;
+    }
+
+    .footer-column ul li{
+      margin-bottom:14px;
+    }
+
+    .footer-column ul li a{
+      text-decoration:none;
+      color:#cbd5e1;
+      font-size:14px;
+      transition:0.3s;
+      position:relative;
+    }
+
+    .footer-column ul li a:hover{
+      color:#00a6ff;
+      padding-left:8px;
+      text-shadow:0 0 12px #00a6ff;
+    }
+
+    /* Customer Service */
+
+    .customer-box p{
+      color:#cbd5e1;
+      line-height:1.8;
+      font-size:14px;
+      margin-bottom:15px;
+    }
+
+    .phone{
+      font-size:24px;
+      color:#00a6ff;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+
+    /* Newsletter */
+
+    .newsletter{
+      margin-top:20px;
+    }
+
+    .newsletter h3{
+      margin-bottom:18px;
+      font-size:18px;
+      color:#fff;
+    }
+
+    .newsletter-box{
+      display:flex;
+      align-items:center;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:50px;
+      overflow:hidden;
+      backdrop-filter:blur(10px);
+    }
+
+    .newsletter-box input{
+      flex:1;
+      padding:15px 20px;
+      border:none;
+      outline:none;
+      background:transparent;
+      color:#fff;
+      font-size:14px;
+    }
+
+    .newsletter-box button{
+      padding:15px 25px;
+      border:none;
+      background:linear-gradient(135deg,#00a6ff,#0077ff);
+      color:#fff;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    .newsletter-box button:hover{
+      opacity:0.9;
+    }
+
+    /* App Section */
+
+    .app-section{
+      margin-top:35px;
+    }
+
+    .app-section h3{
+      margin-bottom:15px;
+      font-size:18px;
+      color:#fff;
+    }
+
+    .app-box{
+      display:flex;
+      gap:20px;
+      align-items:center;
+      margin-top:20px;
+    }
+
+    .qr{
+      width:120px;
+      height:120px;
+      background:#fff;
+      padding:10px;
+      border-radius:15px;
+    }
+
+    .playstore-btn{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 20px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:15px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .playstore-btn:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 20px rgba(0,166,255,0.5);
+    }
+
+    .playstore-btn i{
+      font-size:30px;
+      color:#00a6ff;
+    }
+
+    .playstore-btn span{
+      font-size:13px;
+      color:#cbd5e1;
+    }
+
+    .playstore-btn h4{
+      color:#fff;
+      font-size:16px;
+    }
+
+    /* Social Icons */
+
+    .social-icons{
+      display:flex;
+      gap:15px;
+      margin-top:25px;
+    }
+
+    .social-icons a{
+      width:45px;
+      height:45px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:rgba(255,255,255,0.05);
+      color:#fff;
+      font-size:18px;
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .social-icons a:hover{
+      background:#00a6ff;
+      transform:translateY(-5px);
+      box-shadow:0 0 25px rgba(0,166,255,0.7);
+    }
+
+    /* Bottom Footer */
+
+    .footer-bottom{
+      margin-top:70px;
+      padding-top:25px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+      position:relative;
+      z-index:2;
+    }
+
+    .footer-bottom p{
+      color:#94a3b8;
+      font-size:14px;
+    }
+
+    .footer-bottom-links{
+      display:flex;
+      gap:25px;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom-links a{
+      text-decoration:none;
+      color:#94a3b8;
+      font-size:14px;
+      transition:0.3s;
+    }
+
+    .footer-bottom-links a:hover{
+      color:#00a6ff;
+    }
+
+    /* Animation */
+
+    .footer-column{
+      opacity:0;
+      transform:translateY(40px);
+      transition:1s;
+    }
+
+    .footer-column.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Responsive */
+
+    @media(max-width:900px){
+
+      .footer-container{
+        grid-template-columns:1fr;
+      }
+
+      .app-box{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ====================================
+            FOOTER
+  ==================================== -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <!-- SUPPORT -->
+
+      <div class="footer-column">
+
+        <h2>Support</h2>
+
+        <ul>
+
+          <li><a href="#">Online Help</a></li>
+          <li><a href="#">Customer Service</a></li>
+          <li><a href="#">Shipping FAQ</a></li>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">Xiaomi Exchange</a></li>
+          <li><a href="#">User Guide</a></li>
+          <li><a href="#">Laptop Drivers</a></li>
+          <li><a href="#">Mi Screen Protect</a></li>
+          <li><a href="#">Mi Extended Warranty</a></li>
+          <li><a href="#">Mi Complete Protect</a></li>
+          <li><a href="#">Certification</a></li>
+          <li><a href="#">Service Centre</a></li>
+          <li><a href="#">Xiaomi Easy Finance</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- SHOP -->
+
+      <div class="footer-column">
+
+        <h2>Shop & Learn</h2>
+
+        <ul>
+
+          <li><a href="#">Xiaomi Phones</a></li>
+          <li><a href="#">Redmi Phones</a></li>
+          <li><a href="#">TV's</a></li>
+          <li><a href="#">Laptops & Tablets</a></li>
+          <li><a href="#">Audio</a></li>
+          <li><a href="#">Lifestyle</a></li>
+          <li><a href="#">Smart Home</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- RETAIL -->
+
+      <div class="footer-column">
+
+        <h2>Retail Store</h2>
+
+        <ul>
+
+          <li><a href="#">Mi Home</a></li>
+          <li><a href="#">Mi Authorized Store</a></li>
+          <li><a href="#">Mi Store Franchise</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- ABOUT -->
+
+      <div class="footer-column">
+
+        <h2>About Us</h2>
+
+        <ul>
+
+          <li><a href="#">Xiaomi</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">User Agreement</a></li>
+          <li><a href="#">Integrity & Compliance</a></li>
+          <li><a href="#">CSR and Disclosures</a></li>
+          <li><a href="#">E-Waste Management</a></li>
+          <li><a href="#">In The Press</a></li>
+          <li><a href="#">Trust Center</a></li>
+          <li><a href="#">Culture</a></li>
+          <li><a href="#">Smartphone Quality</a></li>
+          <li><a href="#">TV Quality</a></li>
+          <li><a href="#">Service Quality</a></li>
+          <li><a href="#">Xiaomi HyperOS</a></li>
+          <li><a href="#">Join Our Team</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- CUSTOMER -->
+
+      <div class="footer-column customer-box">
+
+        <h2>Customer Service</h2>
+
+        <div class="phone">
+          1800 103 6286
+        </div>
+
+        <p>
+          Available from 10 AM - 7 PM
+        </p>
+
+        <p>
+          Chat with our Virtual AI Bot —
+          Now in हिन्दी / English anytime!
+        </p>
+
+        <!-- Newsletter -->
+
+        <div class="newsletter">
+
+          <h3>Let's stay in touch</h3>
+
+          <div class="newsletter-box">
+
+            <input type="email"
+            placeholder="Enter email address">
+
+            <button>
+              Subscribe
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- Social -->
+
+        <div class="social-icons">
+
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+          <a href="#"><i class="fab fa-instagram"></i></a>
+
+          <a href="#"><i class="fab fa-youtube"></i></a>
+
+          <a href="#"><i class="fab fa-twitter"></i></a>
+
+        </div>
+
+        <!-- App Section -->
+
+        <div class="app-section">
+
+          <h3>Get Mi Store App</h3>
+
+          <p style="color:#94a3b8; margin-top:10px;">
+            Scan for our latest information and
+            better shopping experience.
+          </p>
+
+          <div class="app-box">
+
+            <img
+            class="qr"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Xiaomi"
+            alt="QR">
+
+            <div class="playstore-btn">
+
+              <i class="fab fa-google-play"></i>
+
+              <div>
+
+                <span>Download on</span>
+
+                <h4>Google Play</h4>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+
+    <div class="footer-bottom">
+
+      <p>
+        Copyright © 2010 - 2026 Xiaomi.
+        All Rights Reserved
+      </p>
+
+      <div class="footer-bottom-links">
+
+        <a href="#">Sitemap</a>
+
+        <a href="#">India / English</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+
+    // Scroll Animation
+
+    const columns=document.querySelectorAll(".footer-column");
+
+    window.addEventListener("scroll",()=>{
+
+      columns.forEach(column=>{
+
+        const position=column.getBoundingClientRect().top;
+
+        const screenPosition=window.innerHeight/1.2;
+
+        if(position<screenPosition){
+
+          column.classList.add("show");
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
+</body>
+</html>
